@@ -15,7 +15,8 @@ return lush(function()
     },
     Whitespace { fg = Normal.fg.darken(40) },
     Comment { fg = lush.hsl(145,0,51) },
-    Keyword { fg = lush.hsl(98,39,99) },
+    Keyword { fg = lush.hsl(170,100,94) },
+    -- Keyword {},
     CursorLine { bg = Normal.bg.lighten(3) },
     Number { Normal },
     LineNr       { bg = Normal.bg.da(10), fg = Normal.bg.li(14) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -39,7 +40,7 @@ return lush(function()
     Cursor       { }, -- character under the cursor
     lCursor      { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { }, -- like Cursor, but used when in IME mode |CursorIM|
-    Directory    { }, -- directory names (and other special names in listings)
+    Directory    { Type }, -- directory names (and other special names in listings)
     DiffAdd      { }, -- diff mode: Added line |diff.txt|
     DiffChange   { }, -- diff mode: Changed line |diff.txt|
     DiffDelete   { }, -- diff mode: Deleted line |diff.txt|
@@ -132,6 +133,7 @@ return lush(function()
     -- -- these groups, or use their own. Consult your LSP client's documentation.
     --
     TSFunction           { Normal }, -- For function (calls and definitions).
+    TSNumber           { Constant }, -- For function (calls and definitions).
 
     LspDiagnosticsError               { fg = lush.hsl(9,51,36) }, -- used for "Error" diagnostic virtual text
     LspDiagnosticsErrorSign           { LspDiagnosticsError }, -- used for "Error" diagnostic signs in sign column
