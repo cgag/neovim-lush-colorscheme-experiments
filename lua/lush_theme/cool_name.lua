@@ -9,15 +9,19 @@ return lush(function()
   return {
     Normal { 
         -- bg = lush.hsl(204, 95, 7),
-        bg = lush.hsl(193, 95, 7),
+        -- bg = lush.hsl(193, 95, 7),
+        bg = lush.hsl(187, 77, 8),
         -- fg = lush.hsl(39, 22, 48),
-        fg = lush.hsl(37, 24, 63),
+        -- fg = lush.hsl(37, 24, 63),
+        fg = lush.hsl(55, 10, 58),
     },
     Whitespace { fg = Normal.fg.darken(40) },
     Comment { fg = lush.hsl(145,0,51) },
-    Keyword { fg = lush.hsl(170,100,94) },
-    -- Keyword {},
-    CursorLine { bg = Normal.bg.lighten(3) },
+    -- Keyword { fg = lush.hsl(100,100,100) },
+    -- Keyword { fg = lush.hsl(30,10,92) },
+    Keyword { fg = lush.hsl(30,10,92) },
+    -- Keyword { fg = Normal.fg.rotate(90) },
+    CursorLine { bg = Normal.bg.lighten(2) },
     Number { Normal },
     LineNr       { bg = Normal.bg.da(10), fg = Normal.bg.li(14) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     CdarkenursorLineNr { bg = CursorLine.bg, fg = Normal.fg.ro(180) }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -30,7 +34,8 @@ return lush(function()
     Special { Normal },
     -- Jblow type color: hsl(158, 62, 68)
     -- Type { fg = lush.hsl(158, 62, 68) },
-    Type { fg = lush.hsl(117, 59, 78) },
+    -- Type { fg = lush.hsl(117, 59, 78) },
+    Type { fg = lush.hsl(112, 53, 78) },
     -- Type { fg = lush.hsl(127, 47, 75) },
 
 
@@ -87,8 +92,11 @@ return lush(function()
     -- -- default,
     -- -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { fg = lush.hsl(169, 55, 76) }, -- (preferred) any constant
-    String         {  Constant }, --   a string constant: "this is a string"
+    -- Constant       { fg = lush.hsl(180, 64, 76) }, -- (preferred) any constant
+    -- Constant       { fg = lush.hsl(179, 39, 65) }, -- (preferred) any constant
+    Constant       { fg = lush.hsl(181, 59, 73) }, -- (preferred) any constant
+    -- Constant       { fg = lush.hsl(169, 70, 77) }, -- (preferred) any constant
+    String       { fg = Constant.fg.lighten(20) }, -- (preferred) any constant
     Character      { }, --  a character constant: 'c', '\n'
     -- Number         { Constant }, --   a number constant: 234, 0xff
     Boolean        { Constant }, --  a boolean constant: TRUE, false
