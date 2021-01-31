@@ -281,7 +281,7 @@ return lush(function()
     local background = lush.hsl('#f2eede')
     local black = lush.hsl('#000000')
     -- local blue = lush.hsl('#1e6fcc')
-    local blue = lush.hsl(212, 40, 53)
+    local blue = lush.hsl(223, 43, 50)
     local green = lush.hsl('#216609')
     local lgreen = lush.hsl('#dfeacc')
     local red = lush.hsl('#cc3e28')
@@ -406,21 +406,21 @@ return lush(function()
 
     GoDecimalInt { fg = blue },
 
-    LspDiagnosticsError               { fg = lush.hsl(9,51,36) }, -- used for "Error" diagnostic virtual text
+    LspDiagnosticsError               { fg = lush.hsl(9,51,36), bg = red }, -- used for "Error" diagnostic virtual text
     LspDiagnosticsErrorSign           { LspDiagnosticsError }, -- used for "Error" diagnostic signs in sign column
     LspDiagnosticsErrorFloating       { LspDiagnosticsError }, -- used for "Error" diagnostic messages in the diagnostics float
     LspDiagnosticsWarning             {  LspDiagnosticsError }, -- used for "Warning" diagnostic virtual text
-    -- LspDiagnosticsWarningSign         { }, -- used for "Warning" diagnostic signs in sign column
-    -- LspDiagnosticsWarningFloating     { }, -- used for "Warning" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsInformation         { }, -- used for "Information" diagnostic virtual text
-    -- LspDiagnosticsInformationSign     { }, -- used for "Information" signs in sign column
-    -- LspDiagnosticsInformationFloating { }, -- used for "Information" diagnostic messages in the diagnostics float
-    -- LspDiagnosticsHint                { }, -- used for "Hint" diagnostic virtual text
-    -- LspDiagnosticsHintSign            { }, -- used for "Hint" diagnostic signs in sign column
-    -- LspDiagnosticsHintFloating        { }, -- used for "Hint" diagnostic messages in the diagnostics float
-    -- LspReferenceText                  { }, -- used for highlighting "text" references
-    -- LspReferenceRead                  { }, -- used for highlighting "read" references
-    -- LspReferenceWrite                 { }, -- used for highlighting "write" references
+    LspDiagnosticsWarningSign         { LspDiagnosticsError }, -- used for "Warning" diagnostic signs in sign column
+    LspDiagnosticsWarningFloating     {   LspDiagnosticsError }, -- used for "Warning" diagnostic messages in the diagnostics float
+    LspDiagnosticsInformation         { LspDiagnosticsError}, -- used for "Information" diagnostic virtual text
+    LspDiagnosticsInformationSign     {LspDiagnosticsError }, -- used for "Information" signs in sign column
+    LspDiagnosticsInformationFloating { LspDiagnosticsError }, -- used for "Information" diagnostic messages in the diagnostics float
+    LspDiagnosticsHint                {LspDiagnosticsError  }, -- used for "Hint" diagnostic virtual text
+    LspDiagnosticsHintSign            {LspDiagnosticsError  }, -- used for "Hint" diagnostic signs in sign column
+    LspDiagnosticsHintFloating        {LspDiagnosticsError  }, -- used for "Hint" diagnostic messages in the diagnostics float
+    LspReferenceText                  {LspDiagnosticsError  }, -- used for highlighting "text" references
+    LspReferenceRead                  {LspDiagnosticsError  }, -- used for highlighting "read" references
+    LspReferenceWrite                 {LspDiagnosticsError   }, -- used for highlighting "write" references
   }
 
 end)
