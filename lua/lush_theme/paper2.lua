@@ -278,7 +278,10 @@ local lush = require('lush')
 -- We should return it for use in other files.
 return lush(function()
     -- taking these from Yorick Peterse's paper theme
-    local background = lush.hsl('#f2eede')
+    -- local background = lush.hsl(48, 43, 91)
+    -- local black = lush.hsl('#000000')
+    --
+    local background = lush.hsl(46, 81, 95)
     local black = lush.hsl('#000000')
     -- local blue = lush.hsl('#1e6fcc')
     local blue = lush.hsl(223, 43, 50)
@@ -298,6 +301,7 @@ return lush(function()
     local cyan = lush.hsl('#158c86')
 
   return {
+    -- Normal { fg = black, bg=background },
     Normal { fg = black, bg=background },
     -- Whitespace { fg = Normal.fg.darken(40) },
     Keyword { fg = Normal.fg, gui = "bold" },
@@ -406,7 +410,7 @@ return lush(function()
 
     GoDecimalInt { fg = blue },
 
-    LspDiagnosticsError               { fg = lush.hsl(9,51,36), bg = red }, -- used for "Error" diagnostic virtual text
+    LspDiagnosticsError               { fg = black, bg = red }, -- used for "Error" diagnostic virtual text
     LspDiagnosticsErrorSign           { LspDiagnosticsError }, -- used for "Error" diagnostic signs in sign column
     LspDiagnosticsErrorFloating       { LspDiagnosticsError }, -- used for "Error" diagnostic messages in the diagnostics float
     LspDiagnosticsWarning             {  LspDiagnosticsError }, -- used for "Warning" diagnostic virtual text
